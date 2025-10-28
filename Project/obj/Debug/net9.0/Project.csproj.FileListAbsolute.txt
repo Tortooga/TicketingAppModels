@@ -1,0 +1,15 @@
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\bin\Debug\net9.0\Project.exe
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\bin\Debug\net9.0\Project.deps.json
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\bin\Debug\net9.0\Project.runtimeconfig.json
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\bin\Debug\net9.0\Project.dll
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\bin\Debug\net9.0\Project.pdb
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.AssemblyInfoInputs.cache
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.AssemblyInfo.cs
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.csproj.CoreCompileInputs.cache
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.sourcelink.json
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.dll
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\refint\Project.dll
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.pdb
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\Project.genruntimeconfig.cache
+C:\Users\Omer\Desktop\Varnox\TicketingApp\ModelTest\project\obj\Debug\net9.0\ref\Project.dll
