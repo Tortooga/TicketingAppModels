@@ -2,8 +2,8 @@ namespace Models
 {
     class Person : ORMModel<Person>
     {
-        public override int? id { set; get; }
-        public override string name { set; get; }
+        public override int? Id { set; get; }
+        public override string Name { set; get; }
 
         public int age { set; get; }
 

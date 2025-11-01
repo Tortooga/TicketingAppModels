@@ -6,8 +6,8 @@ namespace Models
 {
     public abstract class ORMModel<T> where T : ORMModel<T>
     {
-        public abstract int? id { set; get; }
-        public abstract string name { set; get; }
+        public abstract int? Id { set; get; }
+        public abstract string Name { set; get; }
         protected abstract Table TableI();
         protected abstract Dictionary<string, object> GetFields();
 
@@ -15,16 +15,16 @@ namespace Models
 
         public bool Record(bool force = false)
         {
-            if ((this.id != null && !force) || (this.id == null && force))
+            if ((this.Id != null && !force) || (this.Id == null && force))
             {
-                Table.log($"Error: Could not write record {this.name} to {TableI().name} (Check the force settings)");
+                Table.log($"Error: Could not write record {this.Name} to {TableI().name} (Check the force settings)");
                 return false;
             }
 
             Writer writer = new Writer(TableI());
             bool successFlag = true;
             var fields = GetFields();
-            string[] record = new string[fields.Count - 1]; // We dont need to allocate space for id
+            string[] record = new string[fields.Count - 1]; // We dont need to allocate space for Id
 
             for (int i = 1; i < record.Length + 1; i++)
             {
@@ -33,19 +33,19 @@ namespace Models
 
             if (force)
             {
-                if (writer.write(record, id) == null)
+                if (writer.write(record, Id) == null)
                 {
                     successFlag = false;
                 }
             }
             else
             {
-                this.id = writer.write(record);
+                this.Id = writer.write(record);
             }
 
-            if (this.id == null || !successFlag)
+            if (this.Id == null || !successFlag)
             {
-                Table.log($"Error: Could not write record {this.name} to {TableI().name}");
+                Table.log($"Error: Could not write record {this.Name} to {TableI().name}");
                 return false;
             }
             return true;
@@ -68,14 +68,14 @@ namespace Models
             {
                 for (int fieldInd = 1; fieldInd < record.Length; fieldInd++)
                 {
-                    if ((typedFields[fieldInd - 1] = Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1])) == null) //Getting the field name and converting the field into it
+                    if ((typedFields[fieldInd - 1] = Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1])) == null) //Getting the field Name and converting the field into it
                     {
                         throw new Exception($"Warning: Null value at Table: {table.name}, Object ID: {record[0]}, Field Name: {table.fields[fieldInd][0]}");
                     }
                 }
 
                 curObject = (T)Activator.CreateInstance(typeof(T), typedFields); //TODO: There isnt an issue but fix this warning
-                curObject.id = Int32.Parse(record[0]); //Assigning the ID
+                curObject.Id = Int32.Parse(record[0]); //Assigning the ID
                 objects.Add(curObject);
             }
 

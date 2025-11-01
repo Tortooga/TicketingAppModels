@@ -12,7 +12,7 @@ List<Person> people = Person.getAll(Person.GetTable());
 
 foreach (Person person in people)
 {
-    Console.WriteLine($"{person.id}: {person.name}: {person.age}");
+    Console.WriteLine($"{person.Id}: {person.Name}: {person.age}");
 }
 
 Console.WriteLine((DateTime.Now - timei).ToString() + " Second/s");
