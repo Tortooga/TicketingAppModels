@@ -1,10 +1,10 @@
-namespace Models.Ticketing
+namespace Models.Projects
 {
     class Ticket
     {
         public static string Hello()
         {
-            return "Test";
+            return "hello";
         }
     }
 }
