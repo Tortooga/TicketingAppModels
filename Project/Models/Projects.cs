@@ -38,8 +38,6 @@ namespace Models.Projects
             //The Following DateTime objects are converted to be stored as strings with a certain format
             ["StartDate"] = StartDate.ToString(Constants.DateTimeFormat),
             ["EndDate"] = EndDate.HasValue ? EndDate.Value.ToString(Constants.DateTimeFormat) : "_", //checking if it has a value before attempting to parse
-            // TODO: Add the rest of the fields
-            //Remember to convert ProjectStatus into a pair of a string and a bool
         };
         
 
@@ -68,8 +66,9 @@ namespace Models.Projects
             }
         }
 
-        //Constructor only with native types for ORM Layer Compatability
-        protected Project(string Name, string TypeName, bool TypeIsPerpetual, string Title, string Description, string Status, string StartDate, string EndDate)
+        //Constructor only with native types for ORM Layer Compatability 
+        //TODO: change the modifier such that this constructor is only accessible from this class and its parent.
+        public Project(string Name, string TypeName, bool TypeIsPerpetual, string Title, string Description, string Status, string StartDate, string EndDate)
         {
             this.Name = Name;
             this.Title = Title;

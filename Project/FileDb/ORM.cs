@@ -73,7 +73,10 @@ namespace Models
                         throw new Exception($"Warning: Null value at Table: {table.name}, Object ID: {record[0]}, Field Name: {table.fields[fieldInd][0]}");
                     }
                 }
-
+                foreach (object field in typedFields)
+                {
+                    Console.WriteLine(field.ToString());
+                }
                 curObject = (T)Activator.CreateInstance(typeof(T), typedFields); //TODO: There isnt an issue but fix this warning
                 curObject.Id = Int32.Parse(record[0]); //Assigning the ID
                 objects.Add(curObject);
