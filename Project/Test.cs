@@ -17,14 +17,14 @@ namespace Models
 
         protected override Dictionary<string, object> GetFields() => new()
         {
-            ["ID"] = id,
-            ["Name"] = name,
+            ["ID"] = Id,
+            ["Name"] = Name,
             ["age"] = age
         };
 
-        public Person(string name, int age)
+        public Person(string Name, int age)
         {
-            this.name = name;
+            this.Name = Name;
             this.age = age;
         }
     }

@@ -1,5 +1,8 @@
 using System.Data.Common;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
+using Utilities;
+using System.Globalization;
 
 namespace Models.Projects
 {
@@ -9,6 +12,15 @@ namespace Models.Projects
 
         //FileDB required Methods/Properties
         public static readonly Table table = new Table("Projects", [
+            ["ID", "Int32"],
+            ["Name", "String"],
+            ["TypeName", "String"],
+            ["TypeIsPerPetual", "Boolean"],
+            ["Title", "String"],
+            ["Description", "String"],
+            ["Status", "String"],
+            ["StartDate", "String"],
+            ["EndDate", "String"]
             //input the fields
         ]);
         public override int? Id { get; set; }
@@ -16,8 +28,18 @@ namespace Models.Projects
         protected override Table TableI() => table;
         protected override Dictionary<string, object> GetFields() => new Dictionary<string, object>
         {
-            ["Id"] = Id
+            ["Id"] = Id,
+            ["Name"] = Name,
+            ["TypeName"] = Type.Name,
+            ["TypeIsPerpetual"] = Type.IsPerpetual,
+            ["Title"] = Title,
+            ["Description"] = Description,
+            ["Status"] = Status.ToString(),
+            //The Following DateTime objects are converted to be stored as strings with a certain format
+            ["StartDate"] = StartDate.ToString(Constants.DateTimeFormat),
+            ["EndDate"] = EndDate.HasValue ? EndDate.Value.ToString(Constants.DateTimeFormat) : "_", //checking if it has a value before attempting to parse
             // TODO: Add the rest of the fields
+            //Remember to convert ProjectStatus into a pair of a string and a bool
         };
         
 
@@ -46,7 +68,27 @@ namespace Models.Projects
             }
         }
 
-        public Project(string Name, ProjectType Type, string Title, string Description, ProjectStatus Status, DateTime StartDate, DateTime EndDate)
+        //Constructor only with native types for ORM Layer Compatability
+        protected Project(string Name, string TypeName, bool TypeIsPerpetual, string Title, string Description, string Status, string StartDate, string EndDate)
+        {
+            this.Name = Name;
+            this.Title = Title;
+            this.Description = Description;
+            this.StartDate = DateTime.ParseExact(StartDate, Constants.DateTimeFormat, CultureInfo.InvariantCulture);
+
+            if (EndDate == "_")
+            {
+                this.EndDate = null;
+            }
+            else
+            {
+            this.EndDate = DateTime.ParseExact(EndDate, Constants.DateTimeFormat, CultureInfo.InvariantCulture);
+            }
+
+            this.Status = (ProjectStatus)Enum.Parse(typeof(ProjectStatus), Status);
+            this.Type = new ProjectType(TypeName, TypeIsPerpetual);
+        }
+        public Project(string Name, ProjectType Type, string Title, string Description, ProjectStatus Status, DateTime StartDate, DateTime? EndDate = null)
         {
             this.Name = Name;
             this.Type = Type;
@@ -62,6 +104,12 @@ namespace Models.Projects
     {   //TODO:include icons 
         public string Name { set; get; }
         public bool IsPerpetual { set; get; }
+
+        public ProjectType(string Name, bool IsPerpetual)
+        {
+            this.Name = Name;
+            this.IsPerpetual = IsPerpetual;
+        }
     }
 
     enum ProjectStatus
