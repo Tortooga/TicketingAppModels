@@ -10,9 +10,9 @@
 - ( ) Implement CLI Parser for Record and getAll(upperLim) commands
 
 ## Refactoring 
-- ( ) Fix all compile-time warnings for possible null refrences 
+- ( ) Fix all compile-time warnings
 - ( ) Add more inline documentation
 
 ## Business Models
-- ( ) Finish ORM integration for Projects
-- ( ) Test Projects 
+- (X) Finish ORM integration for Projects
+- (X) Test Projects 

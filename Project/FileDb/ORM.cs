@@ -61,7 +61,6 @@ namespace Models
             {
                 return null;
             }
-            Table.log($"{records.Length}");
             T? curObject;
             object?[] typedFields = new object[records[0].Length - 1]; //Using the length of the first element as reference
             foreach (string[] record in records)

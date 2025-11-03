@@ -17,13 +17,6 @@ Project project = new Project(
     DateTime.Now
 ); */
 
-Project.table.InitialiseTable();
-List<Project> projects = Project.getAll(Project.table);
-
-foreach (Project project in projects)
-{
-    Console.WriteLine($"{project.Id}: {project.Name}");
-}
 
 Console.WriteLine((DateTime.Now - timei).ToString() + " Second/s");
 
