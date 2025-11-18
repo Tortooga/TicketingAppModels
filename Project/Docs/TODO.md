@@ -2,7 +2,7 @@
 
 ## ORM Layer
 - (x) Implement Basic ORM With GetAll 
-- ( ) *Extensively test ORM layer with Record() and GetAll()
+- ( ) *Extensively test ORM layer with Record(), GetAll(), deleteRecord
 - ( ) Fix Static table field issue
 - ( ) Add the rest of FileDB functionality
 

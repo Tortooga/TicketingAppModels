@@ -56,7 +56,7 @@ namespace Models
             List<T> objects = new List<T>();
             Parser parser = new Parser(table);
             string[][]? records = parser.ParseTable();
-           
+
             if (records == null || records.Length < 2)
             {
                 return null;
@@ -82,6 +82,22 @@ namespace Models
             }
 
             return objects;
+        }
+        
+        //TODO: Test
+        public string? DeleteRecord()
+        {
+            Writer writer = new Writer(TableI());
+            if (this.Id == null)
+            {
+                Table.log($"Warning: could not delete record at {TableI().name}, it does not have an id and does not exist in the table");
+                return "Record has no ID";
+            }
+            if (!writer.deleteRecord((int)this.Id))
+            {
+                return "An Error Has Occured";
+            }
+            return null;
         }
     }
 }

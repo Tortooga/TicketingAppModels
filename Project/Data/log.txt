@@ -32,3 +32,4 @@
 03/11/2025 12:13:08 | 8
 03/11/2025 12:13:08 | 8
 03/11/2025 12:13:27 | 9
+18/11/2025 14:57:50 | Warning: could not delete record at Projects, it does not have an id and does not exist in the table
