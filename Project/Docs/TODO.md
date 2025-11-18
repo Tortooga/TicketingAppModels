@@ -2,9 +2,10 @@
 
 ## ORM Layer
 - (x) Implement Basic ORM With GetAll 
-- ( ) *Extensively test ORM layer with Record(), GetAll(), deleteRecord
+- ( ) *Extensively test ORM layer with Record(), GetAll(), DeleteRecord(), Clone() 
 - ( ) Fix Static table field issue
-- ( ) Add the rest of FileDB functionality
+- (X) Add the rest of FileDB functionality
+- ( ) Add relational table support
 
 ## FileDB CLI
 - ( ) Implement CLI Parser for Record and getAll(upperLim) commands

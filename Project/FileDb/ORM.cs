@@ -11,8 +11,6 @@ namespace Models
         protected abstract Table TableI();
         protected abstract Dictionary<string, object> GetFields();
 
-
-
         public bool Record(bool force = false)
         {
             if ((this.Id != null && !force) || (this.Id == null && force))
@@ -98,6 +96,11 @@ namespace Models
                 return "An Error Has Occured";
             }
             return null;
+        }
+
+        public T Clone()
+        {
+            return (T)this.MemberwiseClone();
         }
     }
 }

@@ -97,6 +97,21 @@ namespace Models.Projects
             this.StartDate = StartDate;
             this.EndDate = EndDate;
         }
+
+        public override string ToString()
+        {
+            return $@"
+            ID: {this.Id}
+            Name: {this.Name}
+            Type: {this.Type.Name}
+            Is Perpetual: {this.Type.IsPerpetual}
+            Title: {this.Title}
+            Description: {this.Description}
+            Status: {this.Status}
+            Start Date: {this.StartDate}
+            End Date: {this.EndDate}
+            ";
+        }
     }
 
     class ProjectType

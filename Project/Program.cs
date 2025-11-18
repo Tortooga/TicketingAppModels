@@ -9,7 +9,7 @@ using Models.Projects;
 DateTime timei = DateTime.Now;
 
 Project project = new Project(
-    "Odoo ERP",
+    "project1",
     new ProjectType("ERP", true),
     "Odoo ERP",
     "ERP Solutions using Odoo",
@@ -17,9 +17,11 @@ Project project = new Project(
     DateTime.Now
 );
 
-project.Record();
-project.DeleteRecord();
+Project project2 = project.Clone();
+project2.Name = "project2";
 
+Console.WriteLine(project2.ToString());
+Console.WriteLine(project.ToString());
 Console.WriteLine((DateTime.Now - timei).ToString() + " Second/s");
 
 
