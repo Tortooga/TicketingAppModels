@@ -12,7 +12,7 @@
 
 ## Refactoring 
 - ( ) Fix all compile-time warnings
-- ( ) Add more inline documentation
+- (X) Add more inline documentation
 
 ## Business Models
 - (X) Finish ORM integration for Projects
