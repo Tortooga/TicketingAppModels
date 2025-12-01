@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.ExceptionServices;
+using CLI;
 using Models;
 using Models.Projects;
 
@@ -8,20 +9,10 @@ using Models.Projects;
 
 DateTime timei = DateTime.Now;
 
-Project project = new Project(
-    "project1",
-    new ProjectType("ERP", true),
-    "Odoo ERP",
-    "ERP Solutions using Odoo",
-    ProjectStatus.Active,
-    DateTime.Now
-);
+CLICommand command = new CLICommand("Record Omer 10 15 -f10", CommandMode.Table);
 
-Project project2 = project.Clone();
-project2.Name = "project2";
+Console.WriteLine(command);
 
-Console.WriteLine(project2.ToString());
-Console.WriteLine(project.ToString());
 Console.WriteLine((DateTime.Now - timei).ToString() + " Second/s");
 
 
