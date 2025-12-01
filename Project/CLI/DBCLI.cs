@@ -46,7 +46,7 @@ namespace CLI
                 token += Command[i];
             }
 
-            if (token != null) //Adding the last token, the previous loop only added the tokens preceding the space delimiter
+            if (!String.IsNullOrEmpty(token)) //Adding the last token, the previous loop only added the tokens preceding the space delimiter
             {
                 tokens.Add(token);
             }
@@ -55,6 +55,7 @@ namespace CLI
             {
                 Errors.Add("Error: Command is empty or invalid. Run \"help\" for command guide");
                 validity = false;
+                return false;
             }
 
             if (!IdentifyFunction(tokens[0])) //The first token is always the command function

@@ -9,7 +9,7 @@ using Models.Projects;
 
 DateTime timei = DateTime.Now;
 
-CLICommand command = new CLICommand("Record Omer 10 15 -f10", CommandMode.Table);
+CLICommand command = new CLICommand("sad re 12 -1", CommandMode.Table);
 
 Console.WriteLine(command);
 
