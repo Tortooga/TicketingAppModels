@@ -9,9 +9,7 @@ using Models.Projects;
 
 DateTime timei = DateTime.Now;
 
-CLICommand command = new CLICommand("sad re 12 -1", CommandMode.Table);
-
-Console.WriteLine(command);
+CLIStream stream = new();
 
 Console.WriteLine((DateTime.Now - timei).ToString() + " Second/s");
 

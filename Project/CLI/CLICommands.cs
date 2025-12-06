@@ -89,7 +89,7 @@ namespace CLI
             string[] commandFunctions = Enum.GetNames(typeof(CommandFunctions));
             for (int i = 0; i < commandFunctions.Length; i++)
             {
-                if (functionToken == ((CommandFunctions)i).ToString())
+                if (functionToken.ToLower() == ((CommandFunctions)i).ToString().ToLower())
                 {
                     Function = (CommandFunctions)i;
                 }
@@ -155,12 +155,12 @@ Errors:
     public enum CommandFunctions //All the functions that could be invoked in CLI
     {
         Record,
-        getAll,
+        GetAll,
         Delete,
         Clone, 
         Exit,
         Open,
         Create,
-        help
+        Help
     }
 }

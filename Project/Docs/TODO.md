@@ -8,7 +8,9 @@
 - ( ) Add relational table support
 
 ## FileDB CLI
-- ( ) Implement CLI Parser for Record and getAll(upperLim) commands
+- (X) Implement CLI Parser for commands
+- ( ) Create CLI Stream class
+- ( ) Implement Help command in CLI Interpreter 
 
 ## Refactoring 
 - ( ) Fix all compile-time warnings
