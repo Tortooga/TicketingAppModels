@@ -29,6 +29,11 @@ namespace CLI
             this.IsValid = Parse(); //Parse() returns a bool determined by some validation steps within it
         }
 
+        public static CLICommand EmptyCommand()
+        {
+            return new CLICommand("",CommandMode.DB);
+        }
+
         private bool Parse() 
         {
             List<string> tokens = new List<string>();

@@ -9,11 +9,12 @@ namespace CLI
         CommandMode Mode { set; get; }
         bool IsProtected { set; get; } //Access type for table that prompts user verification after delete commands
         Table? CurrentTable { set; get; }
-        CLICommand? Command { set; get; }
+        CLICommand Command { set; get; }
 
         public CLIStream()
         {
             //On start setting always the same
+            Command = CLICommand.EmptyCommand();
             Mode = CommandMode.DB;
             IsProtected = true;
 
@@ -57,18 +58,12 @@ namespace CLI
             switch (Command.Function)
             {
                 case CommandFunctions.Record:
-                    if (!RecordValidate())
+                    if (RecordCommand())
                     {
                         return "Invalid Arguments/Options for \"Record\"";
                     }
                     break;
                 
-                case CommandFunctions.GetAll:
-                    if (!GetAllValidate())
-                    {
-                        return "Invalid Arguments/Options for \"Record\"";
-                    }
-                    break;
                 default:
                     return "Invalid Function";
             }
@@ -76,15 +71,44 @@ namespace CLI
             return null;
         }
 
-        //Create Validation methods for each function or combine validation and evalution onto one method
-        private bool RecordValidate()
+        //Record [Cells] -amount
+        bool RecordCommand()
         {
-            return false;
+            int amount = 1;
+
+            //amount option validation
+            if (Mode == CommandMode.DB)
+            {
+                Console.WriteLine("Cannot record, please select a table first");
+                return false;
+            }
+            if (Command.Options.Count > 1)
+            {
+                Console.WriteLine("Record only takes one option: it takes -[int amount]");
+                return false;
+            }
+            if (Command.Options.Count == 1)
+            {
+                if (int.TryParse(Command.Options[0], out amount))
+                {
+                    Console.WriteLine("Invalid value for -[int amount]");
+                    return false;
+                }
+                if (amount < 1)
+                {
+                    Console.WriteLine("-[int amount] cannot be less that 1");
+                }
+            }
+
+            //arguments validation
+            
+            return true;
         }
 
-        private bool GetAllValidate()
+        void Terminate()
         {
-            return false;
+            Console.WriteLine("Add termination");
+            //Add termination
         }
         private string GetPrefix()
         {

@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 using Models.Projects;
-public class ProjectTests
+public class ProjectClassTests
 {
     private static ProjectType InternalType => new ProjectType("Internal", true);
     private static ProjectType ExternalType => new ProjectType("External", false);

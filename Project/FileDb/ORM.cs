@@ -67,7 +67,7 @@ namespace Models
                 {
                     if ((typedFields[fieldInd - 1] = Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1])) == null) //Getting the field Name and converting the field into it
                     {
-                        throw new Exception($"Warning: Null value at Table: {table.name}, Object ID: {record[0]}, Field Name: {table.fields[fieldInd][0]}");
+                        throw new Exception($"Warning: Null value at Table: {table.name}, Object ID: {record[0]}");
                     }
                 }
                 foreach (object field in typedFields)
@@ -82,6 +82,41 @@ namespace Models
             return objects;
         }
         
+        public static bool TryParse(string[] record, Table table, ref T obj)
+        {
+            if (record.Count() < 2)
+            {
+                Table.log($"Error(non-fatal): Record in {table.name}, of ID {record[0]}, has less than 2 fields");
+                return false;
+            }
+            object?[] typedFields = new object[record.Length - 1];
+            for (int fieldInd = 1; fieldInd < record.Length; fieldInd++)
+            {
+                typedFields[fieldInd - 1] = Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1]); //Getting the field Name and converting the field into it
+                if (typedFields[fieldInd - 1] == null) 
+                {
+                    return false;
+                }
+            }
+
+            T tryObject; //Made to ensure obj does not get partialy initialised before a throw.
+            try
+            {
+                tryObject = (T)Activator.CreateInstance(typeof(T), typedFields); //TODO: There isnt an issue but fix this warning
+                tryObject.Id = Int32.Parse(record[0]); //Assigning the ID
+
+                //if tryObject didnt throw
+                obj = tryObject;
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                Table.log(ex.Message);
+                return false;
+            }
+
+        }
         //TODO: Test
         public string? DeleteRecord()
         {
@@ -97,6 +132,7 @@ namespace Models
             }
             return null;
         }
+
 
         public T Clone()
         {
