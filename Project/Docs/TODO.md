@@ -6,6 +6,7 @@
 - ( ) Fix Static table field issue
 - (X) Add the rest of FileDB functionality
 - ( ) Add relational table support
+- ( ) implement TryParse on getAll
 
 ## FileDB CLI
 - (X) Implement CLI Parser for commands
@@ -19,3 +20,6 @@
 ## Business Models
 - (X) Finish ORM integration for Projects
 - (X) Test Projects 
+
+## Testing
+- ( ) Implement a random object generator of type Testable, perhaps to the ORM as a whole

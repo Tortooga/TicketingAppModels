@@ -14,3 +14,9 @@ Status:String,
 StartDate:String,
 EndDate:String,
 }
+{Testables:4,
+ID:Int32,
+StrField:String,
+BoolField:Boolean,
+FloatField:Single,
+}

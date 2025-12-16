@@ -85,3 +85,21 @@
 01/12/2025 19:08:21 | 3
 01/12/2025 19:10:51 | 5
 01/12/2025 19:10:51 | 4
+16/12/2025 15:03:44 | Testables was validated successfully
+16/12/2025 15:03:44 | DataBase table created: Testables
+16/12/2025 15:12:21 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:20:41 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:20:50 | Error: attempted to record This Item Should Be Deleted. to StrField in Testables, . is an invalid charecter for that field
+16/12/2025 16:20:50 | Error: Could not commit record This Item Should Be Deleted.True5.9 to Testables
+16/12/2025 16:20:50 | Error: Could not write record TestItem  to Testables
+16/12/2025 16:20:55 | Error: attempted to record This Item Should Be Deleted. to StrField in Testables, . is an invalid charecter for that field
+16/12/2025 16:20:55 | Error: Could not commit record This Item Should Be Deleted.True5.9 to Testables
+16/12/2025 16:20:55 | Error: Could not write record TestItem  to Testables
+16/12/2025 16:21:28 | Error: attempted to record This Item Should Be Deleted. to StrField in Testables, . is an invalid charecter for that field
+16/12/2025 16:21:28 | Error: Could not commit record This Item Should Be Deleted.True5.9 to Testables
+16/12/2025 16:21:28 | Error: Could not write record TestItem  to Testables
+16/12/2025 16:23:32 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:24:04 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:25:13 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:26:07 | 10
+16/12/2025 16:26:48 | Warning: Could not Initiate Testables, it already exists.

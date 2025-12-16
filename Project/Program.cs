@@ -6,7 +6,7 @@ using Models.Projects;
 
 
 //InitialiseTables.initialise();
-
+Testable.table.InitialiseTable();
 DateTime timei = DateTime.Now;
 
 CLIStream stream = new();

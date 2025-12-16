@@ -82,7 +82,7 @@ namespace Models
             return objects;
         }
         
-        public static bool TryParse(string[] record, Table table, ref T obj)
+        public static bool TryParse(string[] record, Table table, ref T obj) //TODO Implement TryParse on getAll
         {
             if (record.Count() < 2)
             {
@@ -130,6 +130,8 @@ namespace Models
             {
                 return "An Error Has Occured";
             }
+
+            this.Id = null;
             return null;
         }
 
