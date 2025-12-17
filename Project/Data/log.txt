@@ -103,3 +103,50 @@
 16/12/2025 16:25:13 | Warning: Could not Initiate Testables, it already exists.
 16/12/2025 16:26:07 | 10
 16/12/2025 16:26:48 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:31:07 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:31:41 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:36:23 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:36:25 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:41:41 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:41:43 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:41:51 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:41:51 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:46:30 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:46:30 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:46:47 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:46:47 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:47:40 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:47:40 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:47:55 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:47:55 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:51:41 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:52:32 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:52:49 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:53:15 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:54:11 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:54:11 | System.String
+16/12/2025 16:54:11 | Constructor on type 'Models.Person' not found.
+16/12/2025 16:55:46 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:55:58 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:56:07 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:56:13 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:56:58 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 16:56:58 | Error: Attempted to Parse null field
+16/12/2025 17:10:33 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:10:33 | Error: Attempted to Parse a null field on Person, at position 0
+16/12/2025 17:33:01 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:33:01 | Omer
+16/12/2025 17:33:01 | Error: Attempted to Parse a null field on Person, at position 0
+16/12/2025 17:33:33 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:34:03 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:34:03 | True
+16/12/2025 17:34:03 | Error: Attempted to Parse a null field on Person, at position 0
+16/12/2025 17:36:23 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:36:23 | True
+16/12/2025 17:36:23 | Error: Attempted to Parse a null field on Person, at position 0
+16/12/2025 17:36:53 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:37:39 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:37:39 | null object logged
+16/12/2025 17:37:54 | Warning: Could not Initiate Testables, it already exists.
+16/12/2025 17:37:54 | null object logged
+16/12/2025 17:37:54 | Error: Attempted to Parse a null field on Person, at position 0

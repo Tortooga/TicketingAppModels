@@ -41,7 +41,6 @@ public class ORMTests
             5.9f);
 
         DelItem.Record();
-        Table.log(DelItem.Id);
         Assert.False(DelItem.Id == null);
         int? DelItemId = DelItem.Id;
         DelItem.DeleteRecord();

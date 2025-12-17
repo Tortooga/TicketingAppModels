@@ -9,8 +9,12 @@ using Models.Projects;
 Testable.table.InitialiseTable();
 DateTime timei = DateTime.Now;
 
-CLIStream stream = new();
+//CLIStream stream = new();
 
+Person person = new("ahmed", 10); 
+Person.getAll(Person.GetTable());
+Console.WriteLine(Person.TryParse(["Omer", "19"], Person.GetTable(), ref person));
+Console.WriteLine($"{person.Name}: {person.age}");
 Console.WriteLine((DateTime.Now - timei).ToString() + " Second/s");
 
 

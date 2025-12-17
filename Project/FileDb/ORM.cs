@@ -70,10 +70,10 @@ namespace Models
                         throw new Exception($"Warning: Null value at Table: {table.name}, Object ID: {record[0]}");
                     }
                 }
-                foreach (object field in typedFields)
+                /*foreach (object field in typedFields)  for debugging
                 {
                     Console.WriteLine(field.ToString());
-                }
+                }*/
                 curObject = (T)Activator.CreateInstance(typeof(T), typedFields); //TODO: There isnt an issue but fix this warning
                 curObject.Id = Int32.Parse(record[0]); //Assigning the ID
                 objects.Add(curObject);
@@ -84,21 +84,22 @@ namespace Models
         
         public static bool TryParse(string[] record, Table table, ref T obj) //TODO Implement TryParse on getAll
         {
-            if (record.Count() < 2)
+            if (record.Count() < 1)
             {
                 Table.log($"Error(non-fatal): Record in {table.name}, of ID {record[0]}, has less than 2 fields");
                 return false;
             }
-            object?[] typedFields = new object[record.Length - 1];
-            for (int fieldInd = 1; fieldInd < record.Length; fieldInd++)
+            object?[] typedFields = new object[record.Length];
+            for (int fieldInd = 0; fieldInd < record.Length; fieldInd++)
             {
-                typedFields[fieldInd - 1] = Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1]); //Getting the field Name and converting the field into it
-                if (typedFields[fieldInd - 1] == null) 
+                Table.log(Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1]));//Issue here
+                typedFields[fieldInd] = Utilities.TypeConversion.ConvertTo(record[fieldInd], table.fields[fieldInd][1]); //Getting the field Name and converting the field into it
+                if (typedFields[fieldInd] == null) 
                 {
+                    Table.log($"Error: Attempted to Parse a null field on {table.name}, at position {fieldInd}");
                     return false;
                 }
             }
-
             T tryObject; //Made to ensure obj does not get partialy initialised before a throw.
             try
             {

@@ -109,13 +109,18 @@ namespace Models
             return true;
         }
 
-        public static void log(object entry){
+        public static void log(object? entry){
             string logPath = rootPath + @"\log.txt";
             if (!File.Exists(logPath)){
                 File.Create(logPath);
             }
             using (StreamWriter writer = new StreamWriter(logPath, true))
             {
+                if (entry == null)
+                {
+                    writer.WriteLine(DateTime.Now + " | " + $"null object logged");
+                    return;
+                }
                 writer.WriteLine(DateTime.Now + " | " + entry.ToString());
             }
         }
